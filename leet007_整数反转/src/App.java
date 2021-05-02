@@ -13,14 +13,12 @@ public class App {
 class Solution {
     public int reverse(int x) {
         long ans = 0;
-        int max = Integer.MAX_VALUE;
-        int min = Integer.MIN_VALUE;
         while (x / 10 != 0) {
             ans = ans * 10 + x % 10;
             x = x / 10;
         }
         ans = ans * 10 + x % 10;
-        if (ans > max || ans < min) {
+        if (ans > Integer.MAX_VALUE || ans < Integer.MIN_VALUE) {
             return 0;
         }
         return (int) ans;
