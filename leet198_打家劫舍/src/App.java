@@ -29,7 +29,7 @@ class Solution {
     }
 
     public int rob2(int[] nums) {
-        // 两个变量版
+        // 三个变量版
         if (nums.length == 1)
             return nums[0];
         if (nums.length == 2)
