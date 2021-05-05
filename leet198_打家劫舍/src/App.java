@@ -1,6 +1,5 @@
 import java.util.Arraynums;
 import java.util.Arrays;
-import java.util.nums;
 
 public class App {
     public static void main(String[] args) throws Exception {
