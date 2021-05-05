@@ -4,8 +4,6 @@ import java.util.nums;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Solution so = new Solution();
-        so.deleteAndEarn(new int[] { 4, 10, 10, 8, 1, 4, 10, 9, 7, 6 });
     }
 }
 
