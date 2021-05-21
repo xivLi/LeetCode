@@ -8,6 +8,7 @@ public class App {
 }
 
 class Solution {
+    // 使用set
     public int repeatedNTimes(int[] nums) {
         Set<Integer> set = new HashSet<>();
         int ans = 0;
