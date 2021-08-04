@@ -11,22 +11,15 @@ public class App {
 class Solution {
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> ans = new ArrayList<>();
-        if (root == null) {
-            return ans;
-        }
         LinkedList<TreeNode> stack = new LinkedList<>();
-        stack.push(root);
-        while (!stack.isEmpty()) {
-            TreeNode node = stack.peek();
-            while (node.left != null) {
-                stack.push(node.left);
-                node = node.left;
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
             }
-            node = stack.pop();
-            ans.add(node.val);
-            if (node.right != null) {
-                stack.push(node.right);
-            }
+            root = stack.pop();
+            ans.add(root.val);
+            root = root.right;
         }
         return ans;
     }
