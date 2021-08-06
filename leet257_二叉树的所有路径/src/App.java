@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class App {
@@ -8,24 +7,27 @@ public class App {
 }
 
 class Solution {
-    public List<Integer> preorderTraversal(TreeNode root) {
-        List<Integer> ans = new ArrayList<>();
-        LinkedList<TreeNode> stack = new LinkedList<>();
+    List<String> ans;
 
+    public List<String> binaryTreePaths(TreeNode root) {
+        ans = new ArrayList<>();
         if (root != null) {
-            stack.push(root);
+            bianli(root, "" + root.val);
         }
-        while (!stack.isEmpty()) {
-            TreeNode node = stack.pop();
-            ans.add(node.val);
-            if (node.right != null) {
-                stack.push(node.right);
-            }
-            if (node.left != null) {
-                stack.push(node.left);
-            }
-        }
-
         return ans;
     }
+
+    private void bianli(TreeNode root, String string) {
+        if (root.left == null && root.right == null) {
+            ans.add(string);
+            return;
+        }
+        if (root.left != null) {
+            bianli(root.left, string + "->" + root.left.val);
+        }
+        if (root.right != null) {
+            bianli(root.right, string + "->" + root.right.val);
+        }
+    }
+
 }
